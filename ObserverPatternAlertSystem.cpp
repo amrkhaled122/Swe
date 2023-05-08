@@ -112,23 +112,21 @@ public:
 
 int main() {
     Parent parent;
-    parent.name = "John doe";
-    parent.phone_number = 123456789;
+    parent.name = "Mahmoud ahmed";
+    parent.phone_number = 01001231245;
 
     EmergencyContact emergency_contact;
-    emergency_contact.name = "Jane Doe";
-    emergency_contact.phone_number = 987654321;
+    emergency_contact.name = "Ahmed Abdelkader";
+    emergency_contact.phone_number = 01203214123;
 
     Child child;
-    child.name = "John Jr";
+    child.name = "Mohamed Mahmoud ";
     child.parent = parent;
     child.emergency_contact = emergency_contact;
 
     AlertSystem alert_system;
-    PhoneAlert phone_alert;
     DisplayAlert display_alert;
 
-    alert_system.attach(&phone_alert);
     alert_system.attach(&display_alert);
 
     // Test case 1: every safe condition is satsified , no alerts should be triggered
@@ -143,8 +141,7 @@ int main() {
     alert_system.set_child_data("Living Room", 0, 80.0, 90.0, 36.5, parent, emergency_contact);
     // Test case 6: Child's body temperature is high and oxygen saturation is low, alerts should be triggered
     alert_system.set_child_data("Living Room", 0, 80.0, 90.0, 40.0, parent, emergency_contact);
- 
-    alert_system.detach(&phone_alert);
+    
     alert_system.detach(&display_alert);
 
     return 0;
