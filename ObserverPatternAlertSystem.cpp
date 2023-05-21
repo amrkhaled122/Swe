@@ -88,17 +88,6 @@ public:
     }
 };
 
-class PhoneAlert : public Observer {
-public:
-    void update(AlertSystem* alert_system, vector<string> alert_types) {
-        cout << "Sending phone alerts: ";
-        for (auto alert_type : alert_types) {
-            cout << alert_type << " , ";
-        }
-        cout << endl;
-    }
-};
-
 class DisplayAlert : public Observer {
 public:
     void update(AlertSystem* alert_system, vector<string> alert_types) {
